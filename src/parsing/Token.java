@@ -2,8 +2,14 @@ package parsing;
 
 public class Token implements ParseComponent {
 	
-	public Token(String contents) {
-		
+	private String contents;
+	
+	public Token(String contentsIn) {
+		contents = contentsIn;
+	}
+	
+	public String toString() {
+		return "token: " + contents;
 	}
 
 }

@@ -2,8 +2,14 @@ package parsing;
 
 public class NumericLiteral implements ParseComponent {
 
-	public NumericLiteral(String contents) {
-		
+	private String contents;
+	
+	public NumericLiteral(String contentsIn) {
+		contents = contentsIn;
+	}
+	
+	public String toString() {
+		return "numeric literal: " + contents;
 	}
 	
 }

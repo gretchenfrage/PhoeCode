@@ -1,9 +1,15 @@
 package parsing;
 
-public class EnclosedStarter {
+public class EnclosedStarter implements ParseComponent {
 	
-	public EnclosedStarter (char content) {
-		
+	private char content;
+	
+	public EnclosedStarter(char contentIn) {
+		content = contentIn;
+	}
+	
+	public String toString() {
+		return "enclosed starter: " + content;
 	}
 
 }

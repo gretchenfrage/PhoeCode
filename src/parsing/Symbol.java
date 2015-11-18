@@ -2,8 +2,14 @@ package parsing;
 
 public class Symbol implements ParseComponent {
 	
-	public Symbol(String contents) {
-		
+	private String contents;
+	
+	public Symbol(String contentsIn) {
+		contents = contentsIn;
+	}
+	
+	public String toString() {
+		return "symbol: " + contents;
 	}
 
 }
