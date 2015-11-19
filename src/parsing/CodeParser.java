@@ -20,9 +20,16 @@ public class CodeParser {
 	private ArrayList<ParseComponent> contents = new ArrayList<ParseComponent>();
 	
 	/*
+	 * complete parsing algorithm
+	 */
+	public void parse() throws InvalidSyntaxException {
+		parseChars();
+	}
+	
+	/*
 	 * converts char array to contents arraylist
 	 */
-	private void parse() throws InvalidSyntaxException {
+	private void parseChars() throws InvalidSyntaxException {
 		while (charsRemaining()) {
 			if (dot()) {
 				parseDot();
@@ -33,7 +40,6 @@ public class CodeParser {
 			} else if (numericLiteralStart()) {
 				parseNumericLiteral();
 			} else if (stringLiteralStart()) {
-				System.out.println("string literal detected");
 				parseStringLiteral();
 			} else if (tokenStart()) {
 				parseToken();
@@ -58,7 +64,7 @@ public class CodeParser {
 	 * returns if the inputted char is some acceptable form of quotation marks
 	 */
 	private boolean quotationMarks(char c) {
-		return c == '"' || c == '‚Äú' || c == '‚Äù';
+		return "\"ìî".indexOf(c) != -1;
 	}
 	
 	/*
